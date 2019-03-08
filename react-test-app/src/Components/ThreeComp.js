@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TwoComp = props => {
+const ThreeComp = props => {
   return (
-    <div className="jumbotron bg-primary text-white">
+    <div className="jumbotron bg-warning text-white">
       <div className="card">
-        <div className="card-header bg-primary">
+        <div className="card-header bg-warning">
           <h1>{props.text}</h1>
         </div>
         <div className="card-body text-dark">
@@ -15,4 +15,4 @@ const TwoComp = props => {
   )
 }
 
-export default TwoComp;
+export default ThreeComp;
