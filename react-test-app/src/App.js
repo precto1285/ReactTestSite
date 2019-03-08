@@ -10,9 +10,17 @@ class App extends Component {
     this.state =
       {
         text: ["Comp One", "Comp Two", "Comp Three", "Comp Four"],
-        food: ['Apple', 'Orange', 'Banana', 'Pear']
+        food: ['Apple', 'Orange', 'Banana', 'Pear'],
+        showState: false
       }
   }
+  ClickMeHandler = (e) => {
+    const showMe = this.state.showState;
+    this.setState({
+      showState: !showMe
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -51,6 +59,28 @@ class App extends Component {
             </div>
             <div className='col-md-3'>
               <FourComp text={this.state.food[3]} />
+            </div>
+          </div>
+          <div className="row">
+            <div className="card my-3">
+              <div className="card-header bg-secondary text-white"></div>
+              <div className="card-body">
+                <button onClick={this.ClickMeHandler} className="btn btn-danger">Click Me</button>
+                {
+                  this.state.showState ?
+                    <div>
+                      <OneComp
+                        text={this.state.text[0]}
+                        fruit={this.state.food[0]} />
+                      <OneComp
+                        text={this.state.text[1]}
+                        fruit={this.state.food[1]} />
+                      <OneComp
+                        text={this.state.text[2]}
+                        fruit={this.state.food[2]} />
+                    </div> : null
+                }
+              </div>
             </div>
           </div>
         </div>
